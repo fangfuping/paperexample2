@@ -1,37 +1,157 @@
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;color:#333;line-height:1.6}
-.container{width:92%;max-width:1100px;margin:0 auto}
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
 
-/* Nav */
-.nav{background:#fff;box-shadow:0 1px 4px #eee;padding:1rem 0;position:sticky;top:0;z-index:99}
-.nav .container{display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:1.4rem;font-weight:bold;color:#222;text-decoration:none}
-.menu a{margin-left:1.5rem;color:#555;text-decoration:none}
-.menu a:hover{color:#0066cc}
+/* 主题色变量 */
+:root {
+    --primary-color: #1a365d;
+    --secondary-color: #2c5282;
+    --light-color: #f7fafc;
+    --text-color: #2d3748;
+    --border-color: #e2e8f0;
+}
 
-/* Hero */
-.hero{padding:6rem 0;text-align:center;background:#f8f9fa}
-.hero h1{font-size:3rem;margin-bottom:.5rem}
-.sub{font-size:1.2rem;color:#666;margin-bottom:1rem}
-.desc{max-width:700px;margin:0 auto 2rem;font-size:1.1rem;color:#777}
-.btns .btn{display:inline-block;padding:.8rem 2rem;border-radius:6px;text-decoration:none;margin:0 .5rem}
-.primary{background:#0066cc;color:#fff}
-.outline{border:1px solid #0066cc;color:#0066cc}
+/* 页面容器 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
 
-/* Section */
-.section{padding:4rem 0;text-align:center}
-.gray{background:#f8f9fa}
-.section h2{font-size:2rem;margin-bottom:2rem}
+/* 头部信息 */
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+    margin-bottom: 3rem;
+}
 
-/* Cards */
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
-.card{background:#fff;padding:2rem;border-radius:8px;box-shadow:0 2px 8px #eee}
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
 
-/* Image */
-.arch-img{max-width:100%;border-radius:6px}
+.header p {
+    font-size: 1.1rem;
+    margin: 0.3rem 0;
+    opacity: 0.9;
+}
 
-/* Code */
-.code{background:#f4f4f4;padding:1.5rem;text-align:left;border-radius:6px;overflow-x:auto}
+/* 通用模块样式 */
+section {
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background-color: var(--light-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
 
-/* Footer */
-.footer{padding:2rem 0;text-align:center;color:#888;border-top:1px solid #eee}
+section h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.8rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+/* 关于我模块 */
+.about-me p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+/* 论文列表模块 */
+.paper-list .paper {
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 6px;
+    transition: box-shadow 0.3s ease;
+}
+
+.paper-list .paper:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.paper h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+}
+
+.paper p {
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.paper a {
+    color: var(--primary-color);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--secondary-color);
+    margin-right: 1rem;
+    padding-bottom: 2px;
+}
+
+.paper a:hover {
+    color: var(--secondary-color);
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+/* 项目/获奖模块 */
+.projects ul, .awards ul {
+    list-style: none;
+}
+
+.projects li, .awards li {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.projects li::before, .awards li::before {
+    content: "•";
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+/* 页脚 */
+.footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--text-color);
+    border-top: 1px solid var(--border-color);
+    margin-top: 2rem;
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .header {
+        padding: 2rem 0;
+    }
+}
