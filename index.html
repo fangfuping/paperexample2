@@ -1,92 +1,238 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Traffic Violation Detection</title>
-<link rel="stylesheet" href="style.css">
-<base href="/paperexample2/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张三 - 个人学术主页</title>
+    <style>
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+        }
+
+        /* 主题色变量 */
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --light-color: #f7fafc;
+            --text-color: #2d3748;
+            --border-color: #e2e8f0;
+        }
+
+        /* 页面容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* 头部信息 */
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            margin: 0.3rem 0;
+            opacity: 0.9;
+        }
+
+        /* 通用模块样式 */
+        section {
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            background-color: var(--light-color);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        section h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.8rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        /* 关于我模块 */
+        .about-me p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        /* 论文列表模块 */
+        .paper-list .paper {
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 6px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .paper-list .paper:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .paper h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        .paper p {
+            color: var(--text-color);
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+
+        .paper a {
+            color: var(--primary-color);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--secondary-color);
+            margin-right: 1rem;
+            padding-bottom: 2px;
+        }
+
+        .paper a:hover {
+            color: var(--secondary-color);
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        /* 项目/获奖模块 */
+        .projects ul, .awards ul {
+            list-style: none;
+        }
+
+        .projects li, .awards li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .projects li::before, .awards li::before {
+            content: "•";
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--text-color);
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .header {
+                padding: 2rem 0;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- 头部个人信息 -->
+    <header class="header">
+        <div class="container">
+            <h1>张三 (San Zhang)</h1>
+            <p>助理研究员 | 某某大学计算机学院</p>
+            <p>研究方向：机器学习、自然语言处理、低资源大模型</p>
+            <p>Email: zhangsan@xxx.edu.cn | GitHub: github.com/zhangsan | ORCID: 0000-0000-0000-0000</p>
+        </div>
+    </header>
 
-<nav class="nav">
-  <div class="container">
-    <a class="logo" href="#">Traffic Violation Detection</a>
-    <div class="menu">
-      <a href="#about">About</a>
-      <a href="#features">Features</a>
-      <a href="#arch">Architecture</a>
-      <a href="#cite">Cite</a>
-      <a href="https://github.com/fangfuping/paperexample2" target="_blank">GitHub</a>
+    <div class="container">
+        <!-- 关于我模块 -->
+        <section class="about-me">
+            <h2>About Me (关于我)</h2>
+            <p>我目前在某某大学计算机学院从事机器学习与自然语言处理方向的研究工作，主要聚焦于低资源NLP、大模型轻量化、参数高效微调等方向。</p>
+            <p>已在ACL、AAAI、EMNLP等CCF A类顶会发表论文10余篇，主持省部级项目2项，参与国家重点研发计划子课题1项，曾获某某大学优秀青年学者、ACL 2024最佳论文提名等荣誉。</p>
+            <p>长期担任ACL、EMNLP、AAAI等顶会审稿人，某某省人工智能学会青年委员。</p>
+        </section>
+
+        <!-- 论文列表模块 -->
+        <section class="paper-list">
+            <h2>Publications (发表论文)</h2>
+            <div class="paper">
+                <h3>Low-Resource Text Classification via Parameter-Efficient Fine-Tuning</h3>
+                <p>Zhang San, Li Si, Wang Wu (通讯作者)</p>
+                <p>Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (ACL 2024)，CCF A类</p>
+                <a href="papers/acl2024.pdf" target="_blank">PDF</a>
+                <a href="https://github.com/zhangsan/lowres-nlp" target="_blank">Code</a>
+                <a href="https://doi.org/10.18653/v1/2024.acl-long.123" target="_blank">DOI</a>
+            </div>
+            <div class="paper">
+                <h3>Lightweight Large Language Model for Edge Devices</h3>
+                <p>Zhang San, Zhao Liu, Qian Sun</p>
+                <p>Proceedings of the 38th AAAI Conference on Artificial Intelligence (AAAI 2024)，CCF A类</p>
+                <a href="papers/aaai2024.pdf" target="_blank">PDF</a>
+                <a href="https://github.com/zhangsan/edge-llm" target="_blank">Code</a>
+                <a href="https://doi.org/10.1609/aaai.v38i13.28976" target="_blank">DOI</a>
+            </div>
+        </section>
+
+        <!-- 研究项目模块 -->
+        <section class="projects">
+            <h2>Research Projects (研究项目)</h2>
+            <ul>
+                <li>XX省自然科学基金青年项目：面向边缘设备的低资源大模型适配研究（2023-2025，项目编号：XXXX，主持）</li>
+                <li>国家重点研发计划子课题：面向智能制造的人机交互关键技术研究（2022-2024，项目编号：XXXX，参与）</li>
+                <li>校企合作项目：基于大模型的智能客服系统研发（2021-2023，项目编号：XXXX，主持）</li>
+            </ul>
+        </section>
+
+        <!-- 获奖荣誉模块 -->
+        <section class="awards">
+            <h2>Awards & Honors (获奖与荣誉)</h2>
+            <ul>
+                <li>某某大学优秀青年学者（2023）</li>
+                <li>ACL 2024 最佳论文提名（2024）</li>
+                <li>某某省人工智能学会优秀论文奖（2022）</li>
+                <li>国家奖学金（博士阶段，2021）</li>
+            </ul>
+        </section>
     </div>
-  </div>
-</nav>
 
-<header class="hero">
-  <div class="container">
-    <h1>Traffic Violation Detection</h1>
-    <p class="sub">YOLO / ROS2 / Intelligent Monitoring</p>
-    <p class="desc">Intelligent traffic violation detection system based on YOLO and ROS2.</p>
-    <div class="btns">
-      <a class="btn primary" href="https://github.com/fangfuping/paperexample2" target="_blank">GitHub</a>
-      <a class="btn outline" href="#arch">View Architecture</a>
-    </div>
-  </div>
-</header>
-
-<section id="about" class="section">
-  <div class="container">
-    <h2>About</h2>
-    <p>This project uses YOLO deep learning model to detect traffic violations such as no-helmet, illegal parking, red-light running, etc.</p>
-  </div>
-</section>
-
-<section id="features" class="section gray">
-  <div class="container">
-    <h2>Features</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>YOLO Detection</h3>
-        <p>High-speed and high-precision identification.</p>
-      </div>
-      <div class="card">
-        <h3>Multi-violation</h3>
-        <p>Helmet / Red-light / Illegal parking.</p>
-      </div>
-      <div class="card">
-        <h3>ROS2 Ready</h3>
-        <p>Can be deployed on robot / inspection car.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="arch" class="section">
-  <div class="container">
-    <h2>Architecture</h2>
-    <img src="arch.png" alt="architecture" class="arch-img">
-  </div>
-</section>
-
-<section id="cite" class="section gray">
-  <div class="container">
-    <h2>Cite</h2>
-<pre class="code">
-@misc{2026violation,
-  title={Traffic Violation Detection System},
-  author={Fang Fuping},
-  year={2026},
-  github={https://github.com/fangfuping/paperexample2}
-}
-</pre>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    <p>© 2026 Fang Fuping</p>
-  </div>
-</footer>
-
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 张三. All rights reserved.</p>
+            <p>Last updated: 2024-05-20</p>
+        </div>
+    </footer>
 </body>
 </html>
